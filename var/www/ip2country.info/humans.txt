@@ -34,6 +34,12 @@ PayPal:     https://www.paypal.me/sergejmueller
 Flattr:     https://flattr.com/profile/sergej.mueller
 
 
+/* CODE ON GITHUB */
+
+https://github.com/sergejmueller/ip2country.info
+https://github.com/sergejmueller/ip2country-bot
+
+
 /* SERVICES */
 
 Git:        GitLab
