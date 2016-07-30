@@ -1,0 +1,6 @@
+map $request_method $upstream_server {
+    default "";
+
+    GET  "http://api_server_get";
+    HEAD "http://api_server_head";
+}

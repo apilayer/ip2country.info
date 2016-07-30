@@ -1,0 +1,30 @@
+## SSL SESSION
+ssl_session_cache shared:SSL:50m;
+ssl_session_timeout 24h;
+ssl_buffer_size 1400;
+
+
+## SSL CIPHERS
+ssl_prefer_server_ciphers on;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_ciphers "EECDH+AESGCM EDH+AESGCM EECDH -RC4 EDH -CAMELLIA -SEED !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS !RC4";
+
+
+## CERTIFICATES
+ssl_certificate         /etc/letsencrypt/live/ip2country.info/fullchain.pem;
+ssl_certificate_key     /etc/letsencrypt/live/ip2country.info/privkey.pem;
+ssl_trusted_certificate /etc/letsencrypt/live/ip2country.info/fullchain.pem;
+
+
+## OCSP STAPLING
+ssl_stapling on;
+ssl_stapling_verify off;
+
+
+## DH GROUP
+ssl_dhparam /etc/ssl/certs/dhparam.pem;
+
+
+## RESOLVER
+#resolver 8.8.8.8 8.8.4.4 [2001:4860:4860::8844] [2001:4860:4860::8888] valid=86400;
+#resolver_timeout 10;

@@ -1,0 +1,161 @@
+/*
+    IMPORTS
+*/
+
+@import 'assets/vars';
+@import 'assets/mixins';
+
+
+/*
+    DEFAULTS
+*/
+
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+section {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    color: $color-secondary;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.4;
+    text-align: center;
+
+    background: $color-bg;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+section {
+    display: table;
+}
+article {
+    display: table-cell;
+    vertical-align: middle;
+
+    p {
+        margin: 18px 0;
+
+        @include breakpoint(desktop) {
+            margin-bottom: 36px;
+        }
+    }
+}
+
+h1 {
+    top: -27px;
+    position: relative;
+
+    color: $color-primary;
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 40px;
+    letter-spacing: -1px;
+}
+h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+a {
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+        color: inherit;
+    }
+}
+
+small {
+    display: block;
+
+    font-size: 12px;
+    line-height: 14px;
+}
+
+
+/*
+    SECTION
+*/
+
+code {
+    font-family: "Source Code Pro", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Consolas, Menlo, Monaco, monospace;
+    font-size: 14px;
+}
+
+table {
+    color: $color-white;
+    margin: 0 auto 14px;
+
+    border-collapse: collapse;
+}
+
+td {
+    &:first-child {
+        padding: 0 10px;
+        background: $color-primary;
+
+        @include breakpoint(desktop) {
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+    }
+    &:last-child {
+        background: $color-secondary;
+        border-left: 1px solid $color-secondary;
+
+        transition: background .25s;
+
+        @include breakpoint(desktop) {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        &:hover {
+            background: $color-primary;
+        }
+
+        a {
+            color: inherit;
+            display: block;
+            padding: 13px 10px 14px;
+        }
+    }
+}
+
+
+/*
+    FOOTER
+*/
+
+footer {
+    width: 100%;
+    bottom: 14px;
+    position: absolute;
+
+    i {
+        margin: 0 10px;
+        font-style: normal;
+    }
+}
+
+
+/*
+    HELPER
+*/
+
+.nowrap {
+    white-space: nowrap;
+}

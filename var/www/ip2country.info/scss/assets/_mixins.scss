@@ -1,0 +1,28 @@
+/*
+    MIXINS
+*/
+
+
+// scss-lint:disable VendorPrefix
+
+@mixin transform($value...) {
+    -webkit-transform: $value;
+    transform: $value;
+}
+
+@mixin transition-transform($value...) {
+    -webkit-transition: -webkit-transform $value;
+    transition: transform $value;
+}
+
+@mixin breakpoint($point) {
+    @if $point == desktop {
+        @media (min-width: 361px) {
+            @content;
+        }
+    } @else {
+        @media (max-width: 360px) {
+            @content;
+        }
+    }
+}

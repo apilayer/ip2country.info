@@ -1,0 +1,17 @@
+server {
+    ## PORT
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+
+    ## SERVER NAME
+    server_name _;
+
+
+    ## LOG
+    access_log off;
+
+
+    ## EXIT
+    return 410;
+}

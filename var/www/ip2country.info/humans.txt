@@ -1,0 +1,55 @@
+IP2COUNTRY.INFO FOR HUMANS
+
+
+/* PERSON */
+
+Name:       Sergej Müller
+Location:   Hamburg, Germany
+Homepage:   https://sergejmueller.github.io
+
+
+/* PRIVACY POLICY */
+
+No cookies
+No IP storings
+No tracking apps
+
+
+/* API USAGE */
+
+Do not abuse the API. Be fair.
+Please cache API responses in your software.
+The API is rate-limited to 2 requests/second/client.
+
+
+/* COSTS */
+
+Domain:     € 21.26 / yearly
+Hosting:    $ 7.14 / monthly
+
+
+/* DONATE */
+
+PayPal:     https://www.paypal.me/sergejmueller
+Flattr:     https://flattr.com/profile/sergej.mueller
+
+
+/* SERVICES */
+
+Git:        GitLab
+TLS:        Let’s Encrypt
+Domain:     InterNetworX
+Hosting:    Vultr, zeit.co
+Monitoring: Runscope
+GeoIP Data: MaxMind
+
+
+/* TECHNOLOGIES */
+
+Backend:    Ubuntu, Nginx (nothing else)
+Frontend:   Node, Gulp, HTML5, CSS3
+
+
+/* APPS */
+
+Sublime Text, Tower, Terminal

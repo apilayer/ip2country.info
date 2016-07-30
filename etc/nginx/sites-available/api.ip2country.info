@@ -1,0 +1,113 @@
+## UPSTREAMS
+upstream api_server_head {
+    server 127.0.0.1:7788;
+}
+upstream api_server_get {
+    server 127.0.0.1:8899;
+}
+
+
+## HTTP
+server {
+    ## INIT
+    listen 80;
+    listen [::]:80;
+
+
+    ## SERVER NAME
+    server_name api.ip2country.info;
+
+
+    ## REWRITE
+    rewrite ^ https://api.ip2country.info$request_uri? permanent;
+}
+
+
+## HTTPS
+server {
+    ## INIT
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+
+    ## SERVER NAME
+    server_name api.ip2country.info;
+
+
+    ## WWW REDIRECT
+    if ( $http_host != api.ip2country.info ) {
+        rewrite ^ https://api.ip2country.info$request_uri? permanent;
+    }
+
+
+    ## INCLUDES
+    include conf.d/security.rules;
+    include conf.d/ssl.rules;
+    include conf.d/api.rules;
+    include conf.d/default.rules;
+
+
+    ## ROOT
+    root /var/www/ip2country.info;
+
+
+    ## LOGS
+    access_log /var/log/nginx/access-api.log api_access_log if=$is_not_runscope;
+}
+
+
+## GET REQUESTS
+server {
+    ## INIT
+    listen 8899;
+
+
+    ## SECURITY
+    allow 127.0.0.1;
+    deny all;
+
+
+    ## LOGS
+    access_log off;
+
+
+    ## MIME TYPE
+    default_type "application/json; charset=utf-8";
+
+
+    ## OUTPUT
+    location / {
+        echo "{";
+        echo '\t"countryCode": "$geoip_country_code",';
+        echo '\t"countryCode3": "$geoip_country_code3",';
+        echo '\t"countryName": "$geoip_country_name",';
+        echo '\t"countryEmoji": "$geoip_country_emoji"';
+        echo "}";
+    }
+}
+
+
+## HEAD REQUESTS
+server {
+    ## INIT
+    listen 7788;
+
+
+    ## SECURITY
+    allow 127.0.0.1;
+    deny all;
+
+
+    ## LOGS
+    access_log off;
+
+
+    ## OUTPUT
+    location / {
+        add_header X-Country-Code "$geoip_country_code";
+        add_header X-Country-Code3 "$geoip_country_code3";
+        add_header X-Country-Name "$geoip_country_name";
+
+        echo_flush;
+    }
+}

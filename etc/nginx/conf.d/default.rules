@@ -1,0 +1,18 @@
+## TXT|ICO|PNG|XML
+location ~* \.(txt|xml|ico|png)$ {
+    expires 31d;
+    access_log off;
+    log_not_found off;
+
+    add_header Cache-Control public;
+    add_header X-Robots-Tag noindex;
+}
+
+
+## LETS ENCRYPT
+location ~ /.well-known {
+    allow all;
+
+    access_log off;
+    log_not_found off;
+}

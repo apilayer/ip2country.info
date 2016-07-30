@@ -1,0 +1,5 @@
+map $http_user_agent $is_not_runscope {
+    default    1;
+
+    ~^runscope 0;
+}

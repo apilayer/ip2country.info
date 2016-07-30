@@ -1,0 +1,32 @@
+{
+    "css": {
+        "path": "./css/",
+        "target": "./css/styles.css"
+    },
+
+    "scss": {
+        "path": "./scss/",
+        "root": "../scss/",
+        "source": "./scss/styles.scss"
+    },
+
+    "html": {
+        "path": "./",
+        "source": "./index.html"
+    },
+
+    "dest": {
+        "path": "./_dist/"
+    },
+
+    "copy": {
+        "files": [
+            "apple-touch-icon.png",
+            "favicon.ico",
+            "favicon.ico.gz",
+            "google6cb14aa37420ddb3.html",
+            "humans.txt",
+            "robots.txt"
+        ]
+    }
+}

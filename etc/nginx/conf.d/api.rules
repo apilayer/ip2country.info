@@ -1,0 +1,61 @@
+## HOME
+location = / {
+    rewrite ^ https://ip2country.info$request_uri? permanent;
+}
+
+
+## REQUEST
+location = "/ip" {
+
+    ## NO IP?
+    if ( $ip = "" ) {
+        return 400;
+    }
+
+    ## METHOD LIMIT
+    limit_except GET {
+        deny all;
+    }
+
+    ## REQUESTS LIMIT
+    limit_req zone=api_req_zone burst=100 nodelay;
+
+    ## PROXY
+    proxy_cache api_cache_zone;
+    proxy_cache_min_uses 2;
+    proxy_cache_valid 1h;
+    proxy_cache_use_stale error timeout updating http_500 http_502 http_503 http_504;
+    proxy_cache_lock on;
+
+    proxy_pass $upstream_server;
+    proxy_set_body none;
+    proxy_redirect off;
+    proxy_http_version 1.1;
+    proxy_pass_request_headers off;
+    proxy_set_header X-Forwarded-For $ip;
+
+    ## HEADERS
+    add_header X-Robots-Tag noindex;
+    add_header X-Frame-Options deny;
+    add_header X-Content-Type-Options nosniff;
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Cache-Status $upstream_cache_status;
+
+    add_header Access-Control-Allow-Origin *;
+    add_header Access-Control-Allow-Methods "GET, HEAD";
+    add_header Strict-Transport-Security "max-age=31536000";
+    add_header Cache-Control "max-age=0, private, must-revalidate";
+}
+
+
+## ROBOTS
+location = "/robots.txt" {
+    expires 31d;
+    access_log off;
+
+    echo 'User-agent: *';
+    echo 'Disallow: /';
+
+    add_header Cache-Control public;
+    add_header X-Robots-Tag noindex;
+}

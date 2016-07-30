@@ -1,0 +1,17 @@
+## HTML
+location = /index.html {
+    ## BROWSER CACHE
+    expires 1d;
+
+    ## NO OPEN FILE CACHE
+    open_file_cache off;
+
+    ## HEADERS
+    add_header Cache-Control public;
+    add_header X-Frame-Options deny;
+    add_header X-Content-Type-Options nosniff;
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Human "Greetings from Germany";
+    add_header Content-Security-Policy "default-src 'none'; img-src 'self'; style-src 'unsafe-inline';";
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload";
+}

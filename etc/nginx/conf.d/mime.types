@@ -1,0 +1,10 @@
+types {
+	text/html          html;
+	text/css           css;
+	text/javascript    js;
+	text/plain         txt;
+	image/svg+xml      svg svgz;
+	image/x-icon       ico;
+    image/png          png;
+	application/json   json;
+}

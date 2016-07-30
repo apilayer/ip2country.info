@@ -1,0 +1,46 @@
+server {
+    ## INIT
+    listen 80;
+    listen [::]:80;
+
+
+    ## SERVER NAME
+    server_name ip2country.info
+                www.ip2country.info;
+
+
+    ## REWRITE
+    rewrite ^ https://ip2country.info$request_uri? permanent;
+}
+
+
+server {
+    ## INIT
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+
+    ## SERVER NAME
+    server_name ip2country.info;
+
+
+    ## WWW REDIRECT
+    if ( $http_host != ip2country.info ) {
+        rewrite ^ https://ip2country.info$request_uri? permanent;
+    }
+
+
+    ## INCLUDES
+    include conf.d/security.rules;
+    include conf.d/ssl.rules;
+    include conf.d/www.rules;
+    include conf.d/default.rules;
+
+
+    ## ROOT
+    root /var/www/ip2country.info;
+
+
+    ## LOGS
+    access_log /var/log/nginx/access-www.log www_access_log if=$is_not_runscope;
+}
