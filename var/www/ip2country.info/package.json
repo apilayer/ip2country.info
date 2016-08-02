@@ -1,12 +1,12 @@
 {
   "name": "IP2Country",
   "description": "Node.js modules for IP 2 Country project",
-  "version": "1.0.0",
-  "last-update": "30.07.2016",
+  "version": "1.1.0",
+  "last-update": "02.08.2016",
   "private": true,
   "repository": "sergejmueller/ip2country.info",
   "devDependencies": {
-    "browser-sync": "^2.12.3",
+    "browser-sync": "^2.14.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.6",
     "gulp-htmlhint": "^0.3.1",
@@ -14,11 +14,12 @@
     "gulp-inline": "^0.1.1",
     "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.2.0",
-    "gulp-scss-lint": "^0.4.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.3",
+    "gulp-stylelint": "^3.0.0",
     "gulp-zopfli": "^1.0.0",
-    "multipipe": "^0.3.0"
+    "multipipe": "^0.3.0",
+    "stylelint": "^7.1.0",
+    "stylelint-config-standard": "^12.0.0"
   },
   "scripts": {
     "test": "npm outdated"

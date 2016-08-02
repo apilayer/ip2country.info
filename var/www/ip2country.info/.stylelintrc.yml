@@ -1,0 +1,7 @@
+extends: stylelint-config-standard
+rules:
+  indentation: 4
+  max-empty-lines: 2
+  number-leading-zero: never
+  rule-non-nested-empty-line-before: null
+  declaration-empty-line-before: null
