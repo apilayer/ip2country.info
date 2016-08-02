@@ -11,11 +11,11 @@ const
     htmlmin = require('gulp-htmlmin'),
     cleanCSS = require('gulp-clean-css'),
     htmlhint = require('gulp-htmlhint'),
-    uglify = require('gulp-uglify'),
     multipipe = require('multipipe'),
     zopfli = require('gulp-zopfli'),
     config = require('./config.json'),
     sourcemaps = require('gulp-sourcemaps'),
+    stylelint = require('gulp-stylelint'),
     browserSync = require('browser-sync').create();
 
 
@@ -28,8 +28,9 @@ gulp.task( 'scss:build', () => {
         gulp.src( config.scss.source ),
 
         sourcemaps.init(),
+        stylelint( { reporters: [ { formatter: 'string', console: true } ] } ),
         sass(),
-        sourcemaps.write( '.', {includeContent: false, sourceRoot: config.scss.root} ),
+        sourcemaps.write( '.', { includeContent: false, sourceRoot: config.scss.root } ),
 
         gulp.dest( config.css.path ),
         browserSync.stream()
@@ -52,35 +53,33 @@ gulp.task( 'html:hint', () => {
     ).on( 'error', notify.onError() );
 } );
 
-gulp.task( 'html:inline', ['html:hint'], () => {
+gulp.task( 'html:inline', [ 'html:hint' ], () => {
     return multipipe(
         gulp.src( config.html.source ),
 
-        inline( { base: '.', js: uglify, css: cleanCSS  } ),
+        inline( { base: '.', css: cleanCSS } ),
 
         gulp.dest( config.dest.path )
     ).on( 'error', notify.onError() );
 } );
 
-gulp.task( 'html:minify', ['html:inline'], () => {
+gulp.task( 'html:minify', [ 'html:inline' ], () => {
     return multipipe(
         gulp.src( config.dest.path + config.html.source ),
 
-        htmlmin(
-            {
-                collapseWhitespace: true,
-                removeRedundantAttributes: true,
-                removeOptionalTags: true,
-                removeAttributeQuotes: true,
-                collapseBooleanAttributes: true
-            }
-        ),
+        htmlmin( {
+            collapseWhitespace: true,
+            removeRedundantAttributes: true,
+            removeOptionalTags: true,
+            removeAttributeQuotes: true,
+            collapseBooleanAttributes: true
+        } ),
 
         gulp.dest( config.dest.path )
     ).on( 'error', notify.onError() );
 } );
 
-gulp.task( 'html:compress', ['scss:build', 'html:minify'], () => {
+gulp.task( 'html:compress', [ 'scss:build', 'html:minify' ], () => {
     return multipipe(
         gulp.src( config.dest.path + config.html.source ),
 
@@ -108,17 +107,15 @@ gulp.task( 'copy:files', () => {
 * browserSync task
 */
 
-gulp.task('serve', ['scss:build'], () => {
-    browserSync.init(
-        {
-            server: true,
-            port: 3001,
-            browser: 'google chrome'
-        }
-    );
+gulp.task('serve', [ 'scss:build' ], () => {
+    browserSync.init( {
+        server: true,
+        port: 3001,
+        browser: 'google chrome'
+    } );
 
-    gulp.watch( config.scss.source, ['scss:build'] );
-    gulp.watch( config.html.source, ['html:hint'], browserSync.reload );
+    gulp.watch( config.scss.source, [ 'scss:build' ] );
+    gulp.watch( config.html.source, [ 'html:hint' ], browserSync.reload );
 });
 
 
@@ -126,11 +123,11 @@ gulp.task('serve', ['scss:build'], () => {
 * Build task
 */
 
-gulp.task( 'build', ['scss:build', 'html:compress', 'copy:files'] );
+gulp.task( 'build', [ 'scss:build', 'html:compress', 'copy:files' ] );
 
 
 /*
 * Default task
 */
 
-gulp.task( 'default', ['serve'] );
+gulp.task( 'default', [ 'serve' ] );
