@@ -2,3 +2,5 @@ css
 .npm
 _dist
 node_modules
+*.log
+*.lock
