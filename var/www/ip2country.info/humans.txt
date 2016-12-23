@@ -46,7 +46,6 @@ Git:        GitLab
 TLS:        Let’s Encrypt
 Domain:     InterNetworX
 Hosting:    Vultr, zeit.co
-Monitoring: Runscope
 GeoIP Data: MaxMind
 
 
