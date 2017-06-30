@@ -18,11 +18,11 @@ No tracking apps
 /* API USAGE */
 
 Do not abuse the API. Be fair.
-Please cache API responses in your software.
 The API is rate-limited to 2 requests/second/client.
+Please cache API responses in your software application.
 
 
-/* COSTS */
+/* OPERATING COSTS */
 
 Domain:     € 21.26 / yearly
 Hosting:    $ 7.14 / monthly
@@ -32,9 +32,10 @@ Hosting:    $ 7.14 / monthly
 
 PayPal:     https://www.paypal.me/sergejmueller
 Flattr:     https://flattr.com/profile/sergej.mueller
+Bitcoin:    1Hot3M3W9Lxz6PdguZZeFjHbkH8kCWfd4i
 
 
-/* CODE ON GITHUB */
+/* GITHUB */
 
 https://github.com/sergejmueller/ip2country.info
 https://github.com/sergejmueller/ip2country-bot
@@ -45,7 +46,7 @@ https://github.com/sergejmueller/ip2country-bot
 Git:        GitLab
 TLS:        Let’s Encrypt
 Domain:     InterNetworX
-Hosting:    Vultr, zeit.co
+Hosting:    Vultr
 GeoIP Data: MaxMind
 
 

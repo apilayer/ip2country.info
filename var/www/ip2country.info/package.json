@@ -8,18 +8,18 @@
   "devDependencies": {
     "browser-sync": "^2.14.0",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.6",
+    "gulp-clean-css": "^3.5.0",
     "gulp-htmlhint": "^0.3.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-inline": "^0.1.1",
-    "gulp-notify": "^2.2.0",
-    "gulp-sass": "^2.2.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.0.0",
     "gulp-stylelint": "^3.0.0",
     "gulp-zopfli": "^1.0.0",
     "multipipe": "^1.0.1",
     "stylelint": "^7.1.0",
-    "stylelint-config-standard": "^13.0.2"
+    "stylelint-config-standard": "^16.0.0"
   },
   "scripts": {
     "test": "npm outdated"
