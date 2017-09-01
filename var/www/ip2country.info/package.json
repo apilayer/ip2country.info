@@ -2,19 +2,19 @@
   "name": "IP2Country",
   "description": "Node.js modules for IP 2 Country project",
   "version": "1.2.0",
-  "last-update": "11.10.2016",
+  "last-update": "01.09.2017",
   "private": true,
   "repository": "sergejmueller/ip2country.info",
   "devDependencies": {
-    "browser-sync": "^2.14.0",
+    "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.5.0",
+    "gulp-clean-css": "^3.7.0",
     "gulp-htmlhint": "^0.3.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-inline": "^0.1.1",
     "gulp-notify": "^3.0.0",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.0.0",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-stylelint": "^3.0.0",
     "gulp-zopfli": "^1.0.0",
     "multipipe": "^1.0.1",
@@ -22,7 +22,7 @@
     "stylelint-config-standard": "^16.0.0"
   },
   "scripts": {
-    "test": "npm outdated"
+    "test": "yarn outdated"
   },
   "author": {
     "name": "Sergej Müller",

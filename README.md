@@ -20,5 +20,5 @@ gulp build
 ### Dependencies check
 
 ```bash
-npm test
+yarn test
 ```

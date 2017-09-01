@@ -28,7 +28,7 @@ Domain:     € 21.26 / yearly
 Hosting:    $ 7.14 / monthly
 
 
-/* DONATE */
+/* DONATIONS */
 
 PayPal:     https://www.paypal.me/sergejmueller
 Flattr:     https://flattr.com/profile/sergej.mueller
@@ -52,7 +52,7 @@ GeoIP Data: MaxMind
 
 /* TECHNOLOGIES */
 
-Backend:    Ubuntu, Nginx (nothing else)
+Backend:    Ubuntu, Nginx
 Frontend:   Node, Gulp, HTML5, CSS3
 
 
