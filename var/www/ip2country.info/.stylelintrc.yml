@@ -3,5 +3,5 @@ rules:
   indentation: 4
   max-empty-lines: 2
   number-leading-zero: never
-  rule-non-nested-empty-line-before: null
+  at-rule-no-unknown: null
   declaration-empty-line-before: null

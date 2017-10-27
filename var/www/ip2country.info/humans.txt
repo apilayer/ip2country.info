@@ -32,7 +32,9 @@ Hosting:    $ 7.14 / monthly
 
 PayPal:     https://www.paypal.me/sergejmueller
 Flattr:     https://flattr.com/profile/sergej.mueller
-Bitcoin:    1Hot3M3W9Lxz6PdguZZeFjHbkH8kCWfd4i
+
+Bitcoin:    1DjNKyaUMCPNcj5RKqzdPQgkw5TQQeuYuy
+Ethereum:   0xBA3190c0e2B45c0441D7eB274D3105568085D99f
 
 
 /* GITHUB */

@@ -47,10 +47,12 @@ article {
     vertical-align: middle;
 
     p {
-        margin: 18px 0;
+        margin: 16px 0;
 
         @include breakpoint(desktop) {
-            margin-bottom: 36px;
+            + p {
+                margin-bottom: 32px;
+            }
         }
     }
 }
