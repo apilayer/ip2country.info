@@ -33,9 +33,6 @@ Hosting:    $ 7.14 / monthly
 PayPal:     https://www.paypal.me/sergejmueller
 Flattr:     https://flattr.com/profile/sergej.mueller
 
-Bitcoin:    1DjNKyaUMCPNcj5RKqzdPQgkw5TQQeuYuy
-Ethereum:   0xBA3190c0e2B45c0441D7eB274D3105568085D99f
-
 
 /* GITHUB */
 
@@ -45,11 +42,10 @@ https://github.com/sergejmueller/ip2country-bot
 
 /* SERVICES */
 
-Git:        GitLab
-TLS:        Let’s Encrypt
-Domain:     InterNetworX
-Hosting:    Vultr
-GeoIP Data: MaxMind
+Git:     GitLab
+TLS:     Let’s Encrypt
+GeoIP:   MaxMind
+Hosting: Vultr
 
 
 /* TECHNOLOGIES */
