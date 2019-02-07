@@ -25,13 +25,13 @@ Please cache API responses in your software application.
 /* OPERATING COSTS */
 
 Domain:     € 21.26 / yearly
-Hosting:    $ 7.14 / monthly
+Hosting:    $ 5.00 / monthly
 
 
 /* DONATIONS */
 
 PayPal:     https://www.paypal.me/sergejmueller
-Flattr:     https://flattr.com/profile/sergej.mueller
+Patreon:    https://www.patreon.com/sergejmueller
 
 
 /* GITHUB */
